@@ -1,0 +1,39 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# React
+frontend/dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# Uploads
+uploads/
+
+# Mac
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# ML Models
+models/
+
+# Docker
+docker-data/
+
+# Coverage
+coverage/
