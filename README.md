@@ -4,13 +4,12 @@
 
 ### AI-Powered Resume Analyzer & Job Matcher
 
-**Understand how well your resume matches a job before you apply.**
-
-ResumeAI uses semantic NLP to compare resumes with job descriptions, identify matching skills, detect skill gaps, calculate compatibility scores, and generate actionable recommendations.
+**Analyze your resume. Match it with a job. Understand what is missing. Improve before you apply.**
 
 <br />
 
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?logo=vite&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?logo=postgresql&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-AI_Service-3776AB?logo=python&logoColor=white)
@@ -19,10 +18,12 @@ ResumeAI uses semantic NLP to compare resumes with job descriptions, identify ma
 
 <br />
 
+[Overview](#-overview) •
 [Features](#-features) •
+[Demo](#-application-preview) •
 [Architecture](#-system-architecture) •
 [Tech Stack](#-tech-stack) •
-[Getting Started](#-getting-started) •
+[Setup](#-getting-started) •
 [API](#-api-overview) •
 [Roadmap](#-roadmap)
 
@@ -32,20 +33,23 @@ ResumeAI uses semantic NLP to compare resumes with job descriptions, identify ma
 
 ## 📌 Overview
 
-ResumeAI is an end-to-end AI application designed to help job seekers understand how closely their resume aligns with a specific job opportunity.
+**ResumeAI** is an end-to-end AI-powered resume analysis platform that compares a candidate's resume with a target job description.
 
-Traditional resume matching systems often depend heavily on exact keyword matches. ResumeAI is designed around **semantic similarity**, allowing the application to compare the meaning and context of resume content with job requirements.
+Instead of relying only on exact keyword matching, ResumeAI is designed to use **semantic NLP techniques** to understand the relationship between resume content and job requirements.
 
-A user can:
+The platform analyzes both documents and presents the results through an interactive dashboard.
 
-1. Upload a resume in PDF format.
-2. Paste a target job description.
-3. Submit both documents for analysis.
-4. Receive an AI-generated compatibility score.
-5. Review matching and missing skills.
-6. See recommendations for improving alignment with the role.
+### ResumeAI helps users:
 
-The project combines **full-stack engineering, NLP, REST APIs, relational data storage, responsive UI design, and cloud-oriented architecture** in one application.
+- 📄 Upload a resume in PDF format
+- 💼 Compare it with a target job description
+- 🧠 Perform semantic resume-to-job analysis
+- 📊 Generate a resume compatibility score
+- ✅ Identify matching skills
+- ⚠️ Detect missing or underrepresented skills
+- 💡 Receive actionable improvement suggestions
+
+The project combines **AI/NLP, full-stack development, REST APIs, PostgreSQL, responsive UI design, and cloud-oriented architecture** into one end-to-end system.
 
 ---
 
@@ -53,34 +57,55 @@ The project combines **full-stack engineering, NLP, REST APIs, relational data s
 
 ### 📄 Resume Upload
 
-Upload a resume directly through the dashboard.
+Users can upload their resume directly through the analysis workspace.
 
-- PDF validation
-- File size validation
-- Drag-and-drop support
-- Upload status feedback
+Current upload functionality includes:
+
+- PDF file validation
+- Maximum file-size validation
+- Drag-and-drop upload
+- File selection through the browser
+- Selected-file preview
+- Upload readiness status
 - Responsive upload interface
 
-### 🧠 Semantic Resume Matching
+---
 
-ResumeAI compares resume content and job descriptions using NLP embeddings rather than relying entirely on exact keyword matches.
+### 💼 Job Description Analysis
 
-This allows the matching engine to identify semantic relationships between related experience and job requirements.
+Users can paste the complete description of the position they are targeting.
 
-### 📊 Match Score
+The job description becomes the reference document used by the matching pipeline to evaluate resume alignment.
 
-The analysis produces a compatibility score representing how closely the resume aligns with the supplied job description.
+---
 
-The dashboard presents the score using:
+### 🧠 Semantic AI Matching
+
+ResumeAI is designed around semantic comparison rather than relying exclusively on exact keyword overlap.
+
+The AI pipeline converts resume and job-description text into numerical representations that can be compared for semantic similarity.
+
+This allows related concepts to be recognized even when they are expressed using different wording.
+
+---
+
+### 📊 Resume Match Score
+
+The application calculates a compatibility score representing the alignment between the uploaded resume and job description.
+
+The dashboard presents the result through:
 
 - percentage score
 - visual progress indicator
 - compatibility summary
-- responsive result cards
+- analysis statistics
+- responsive score cards
+
+---
 
 ### ✅ Matching Skills
 
-Skills detected in both the resume and job description are surfaced as strengths.
+ResumeAI identifies skills appearing in both the resume and target job requirements.
 
 Example:
 
@@ -92,176 +117,259 @@ AWS
 Python
 ```
 
+These are displayed as strengths within the results dashboard.
+
+---
+
 ### ⚠️ Skill Gap Detection
 
-ResumeAI identifies relevant skills found in the job description that were not detected in the uploaded resume.
+The application identifies relevant skills found in the job description that were not detected in the resume.
 
-This helps users understand potential gaps between their current resume and the target role.
+This gives users a clearer picture of the gap between their current resume and the target role.
 
-### 💡 Recommendations
+> Missing skills should only be added to a resume when the candidate genuinely has that experience.
 
-The analysis provides actionable recommendations based on the comparison.
+---
 
-Recommendations are intended to help users understand where their resume could better represent relevant experience.
+### 💡 AI Recommendations
 
-> ResumeAI does not recommend adding skills or experience the user does not actually possess.
+The results dashboard provides actionable recommendations based on the resume-to-job comparison.
 
-### 📱 Responsive Dashboard
+Recommendations can help users identify where relevant existing experience could be represented more clearly.
 
-The frontend is designed for:
+---
 
-- desktop
-- laptop
-- tablet
-- mobile
+### 🧭 Dashboard Navigation
 
-The interface includes:
+The application includes a dashboard-oriented navigation system with:
 
 - fixed desktop sidebar
-- sticky navigation
+- sticky top navigation
 - mobile section navigation
-- direct navigation to the analyzer
-- automatic navigation to results
-- responsive cards and layouts
+- direct access to the analyzer
+- direct access to results
+- smooth section navigation
+- automatic navigation to results after analysis
+
+This avoids forcing users to repeatedly scroll through the entire dashboard.
+
+---
+
+### 📱 Responsive Design
+
+The interface is designed to adapt across:
+
+- mobile
+- tablet
+- laptop
+- desktop
+
+Desktop users receive a persistent sidebar while smaller screens use compact navigation.
 
 ---
 
 ## 🖥️ Application Preview
 
-> Screenshots will be added as the production UI is finalized.
+### 🏠 Dashboard
 
-### Dashboard
-
-<!-- Replace with actual screenshot -->
-<!--
 ![ResumeAI Dashboard](docs/images/dashboard.png)
--->
 
-```text
-┌──────────────┬──────────────────────────────────────────────┐
-│              │ Resume Intelligence          Analyze Resume │
-│  ResumeAI    ├──────────────────────────────────────────────┤
-│              │                                              │
-│  Overview    │  AI-Powered Resume Analysis                  │
-│              │                                              │
-│  Analyzer    │  Match your resume                           │
-│              │  to the right opportunity.                   │
-│  Results     │                                              │
-│              │  Semantic AI • Match Score • Skill Analysis │
-│  History     │                                              │
-│  (planned)   │                                              │
-└──────────────┴──────────────────────────────────────────────┘
-```
+The main dashboard introduces the platform and provides quick navigation to the resume analyzer and results.
 
-### Resume Analyzer
+---
 
-```text
-┌──────────────────────────┬──────────────────────────┐
-│ 01  RESUME               │ 02  TARGET ROLE          │
-│                          │                          │
-│        📄                │  Job Description         │
-│                          │                          │
-│ Drop your resume here    │  Paste job description  │
-│ PDF • Max 5 MB           │  here...                 │
-│                          │                          │
-└──────────────────────────┴──────────────────────────┘
+### 📄 Resume Analyzer
 
-        Resume ✓ → Job ✓ → AI Analysis
+![ResumeAI Resume Analyzer](docs/images/analyzer.png)
 
-              Analyze Resume Match
-```
+The analysis workspace separates resume upload and job-description input into a responsive two-column interface.
 
-### Analysis Results
+Users can upload their PDF, paste a job description, and start the AI analysis from one workspace.
 
-```text
-┌──────────────────────┬─────────────────────────────┐
-│                      │ ANALYSIS SUMMARY            │
-│       86%            │                             │
-│   Match Score        │ Matched   Missing   Actions │
-│   ███████████░       │    8         3        4    │
-└──────────────────────┴─────────────────────────────┘
+---
 
-┌──────────────────────┐ ┌───────────────────────────┐
-│ MATCHED SKILLS       │ │ SKILL GAPS                │
-│                      │ │                           │
-│ React  Node.js  AWS  │ │ Docker  Kubernetes       │
-└──────────────────────┘ └───────────────────────────┘
+### 📊 AI Analysis Results
 
-┌─────────────────────────────────────────────────────┐
-│ 💡 AI RECOMMENDATIONS                              │
-│                                                     │
-│ 01  Recommendation...     02  Recommendation...    │
-└─────────────────────────────────────────────────────┘
-```
+![ResumeAI Analysis Results](docs/images/analysis-results.png)
+
+The results dashboard displays:
+
+- resume match score
+- number of matching skills
+- identified skill gaps
+- recommendation count
+- matching skill details
+- missing skill details
+- AI-generated recommendations
+
+---
+
+### 📱 Responsive Experience
+
+![ResumeAI Mobile Dashboard](docs/images/mobile-dashboard.png)
+
+The dashboard automatically adapts to smaller screens with mobile-friendly navigation and stacked content.
 
 ---
 
 ## 🏗️ System Architecture
 
+ResumeAI separates the user interface, application API, AI processing, and persistent data layers.
+
 ```mermaid
 flowchart LR
-    U[User] --> F[React Frontend]
+    USER[User]
 
-    F -->|Resume + Job Description| B[Node.js API]
+    USER --> UI[React Frontend]
 
-    B -->|Resume File| P[PDF Processing]
-    B -->|Analysis Request| AI[AI / NLP Service]
+    UI -->|Resume + Job Description| API[Node.js REST API]
 
-    P --> T[Extracted Resume Text]
-    T --> AI
+    API --> PDF[PDF Processing]
 
-    AI --> ST[Sentence Transformer Model]
+    PDF --> TEXT[Resume Text]
 
-    ST --> E1[Resume Embedding]
-    ST --> E2[Job Embedding]
+    TEXT --> AI[AI / NLP Service]
 
-    E1 --> S[Semantic Similarity]
-    E2 --> S
+    API -->|Job Description| AI
 
-    S --> R[Match Score]
-    AI --> SK[Skill Analysis]
+    AI --> MODEL[Sentence Transformer Model]
+
+    MODEL --> RE[Resume Embedding]
+    MODEL --> JE[Job Embedding]
+
+    RE --> SIM[Semantic Similarity]
+    JE --> SIM
+
+    SIM --> SCORE[Match Score]
+
+    AI --> SKILLS[Skill Analysis]
     AI --> REC[Recommendations]
 
-    B --> DB[(PostgreSQL)]
+    API --> DB[(PostgreSQL)]
 
-    R --> B
-    SK --> B
-    REC --> B
+    SCORE --> API
+    SKILLS --> API
+    REC --> API
 
-    B --> F
+    API --> UI
 ```
 
-### Request Flow
+---
+
+## 🔄 Application Flow
 
 ```text
 User
  │
- │ Upload PDF + Job Description
+ │ Upload Resume
+ │ Paste Job Description
  ▼
 React Frontend
  │
  │ multipart/form-data
  ▼
-Node.js REST API
+Node.js API
  │
- ├──── Resume Processing
+ ├── Validate Request
  │
- ├──── Skill Extraction
+ ├── Process PDF
  │
- ├──── AI Service
- │       │
- │       └── Sentence Transformers
+ ├── Extract Resume Text
  │
- ├──── Match Calculation
- │
- └──── PostgreSQL
-         │
-         ▼
-Analysis Result
- │
- ▼
-React Dashboard
+ └── Send Content for AI Analysis
+              │
+              ▼
+        NLP / AI Service
+              │
+       ┌──────┴──────┐
+       │             │
+       ▼             ▼
+ Resume Embedding  Job Embedding
+       │             │
+       └──────┬──────┘
+              ▼
+       Semantic Similarity
+              │
+       ┌──────┼──────────┐
+       ▼      ▼          ▼
+     Score  Skills  Recommendations
+       │      │          │
+       └──────┼──────────┘
+              ▼
+          Node.js API
+              │
+              ▼
+       PostgreSQL / Response
+              │
+              ▼
+        React Dashboard
 ```
+
+---
+
+## 🧠 AI Matching Pipeline
+
+The matching process can be represented as:
+
+```text
+Resume PDF
+    │
+    ▼
+Text Extraction
+    │
+    ▼
+Resume Text
+    │
+    ├────────────────────────┐
+    │                        │
+    ▼                        ▼
+Resume Content        Job Description
+    │                        │
+    ▼                        ▼
+Sentence Embedding    Sentence Embedding
+    │                        │
+    └───────────┬────────────┘
+                ▼
+         Semantic Similarity
+                │
+       ┌────────┴─────────┐
+       ▼                  ▼
+   Match Score       Skill Analysis
+       │                  │
+       └─────────┬────────┘
+                 ▼
+          Recommendations
+```
+
+### Why Sentence Transformers?
+
+Simple keyword matching can fail when a resume and job description describe similar experience using different language.
+
+Sentence Transformers create dense numerical representations called **embeddings**.
+
+Conceptually:
+
+```text
+Resume
+   │
+   ▼
+Embedding Vector A
+
+Job Description
+   │
+   ▼
+Embedding Vector B
+
+Vector A + Vector B
+        │
+        ▼
+Cosine Similarity
+        │
+        ▼
+Semantic Match Score
+```
+
+This allows the system to compare the meaning of the documents rather than only counting identical words.
 
 ---
 
@@ -269,78 +377,19 @@ React Dashboard
 
 | Layer | Technology | Purpose |
 |---|---|---|
-| Frontend | React | User interface |
-| Build Tool | Vite | Frontend development/build |
-| Styling | Tailwind CSS | Responsive UI |
-| Icons | React Icons | Application iconography |
-| Backend | Node.js | API and application logic |
-| API | Express.js | REST endpoints |
-| Database | PostgreSQL | Persistent application data |
-| AI | Sentence Transformers | Semantic text embeddings |
-| AI Runtime | Python | NLP model service |
-| NLP | BERT-based models | Semantic understanding |
+| Frontend | React | Component-based user interface |
+| Build Tool | Vite | Fast frontend development and builds |
+| Styling | Tailwind CSS | Responsive application styling |
+| Icons | React Icons | Interface iconography |
+| Backend | Node.js | Server-side application logic |
+| API | Express.js | REST API layer |
+| Database | PostgreSQL | Persistent relational storage |
+| AI Runtime | Python | NLP inference service |
+| NLP | Sentence Transformers | Semantic text embeddings |
+| Model Family | BERT-based models | Contextual text representation |
 | Cloud | AWS | Planned production infrastructure |
-| Version Control | Git + GitHub | Source control |
-
----
-
-## 🧠 AI Matching Pipeline
-
-The core analysis pipeline follows several stages.
-
-```text
-Resume PDF
-     │
-     ▼
-Text Extraction
-     │
-     ▼
-Text Cleaning
-     │
-     ├──────────────────┐
-     ▼                  ▼
-Resume Text       Job Description
-     │                  │
-     ▼                  ▼
-Sentence          Sentence
-Embedding         Embedding
-     │                  │
-     └────────┬─────────┘
-              ▼
-       Semantic Similarity
-              │
-       ┌──────┴──────┐
-       ▼             ▼
- Match Score     Skill Analysis
-       │             │
-       └──────┬──────┘
-              ▼
-       Recommendations
-```
-
-### Why Sentence Transformers?
-
-Keyword matching can miss relationships between phrases that have similar meanings but use different wording.
-
-Sentence Transformers generate dense vector representations of text. Resume and job-description embeddings can therefore be compared using semantic similarity.
-
-Conceptually:
-
-```text
-Resume text
-     ↓
-Embedding vector A
-
-Job description
-     ↓
-Embedding vector B
-
-A + B
-  ↓
-Cosine similarity
-  ↓
-Compatibility score
-```
+| Version Control | Git | Source control |
+| Repository | GitHub | Project hosting and collaboration |
 
 ---
 
@@ -350,6 +399,7 @@ Compatibility score
 smart-resume-analyzer/
 │
 ├── frontend/
+│   │
 │   ├── src/
 │   │   ├── api/
 │   │   │   └── api.js
@@ -381,19 +431,26 @@ smart-resume-analyzer/
 ├── database/
 │   └── ...
 │
+├── docs/
+│   └── images/
+│       ├── dashboard.png
+│       ├── analyzer.png
+│       ├── analysis-results.png
+│       └── mobile-dashboard.png
+│
 ├── .gitignore
 └── README.md
 ```
 
-> The exact structure may evolve as authentication, analysis history, cloud infrastructure, and production deployment are added.
+The structure will continue evolving as authentication, analysis history, testing, and cloud infrastructure are implemented.
 
 ---
 
-## 🚀 Getting Started
+# 🚀 Getting Started
 
-### Prerequisites
+## Prerequisites
 
-Install the following before running the project locally:
+Install the following tools before running ResumeAI locally:
 
 - Node.js 18+
 - npm
@@ -401,7 +458,7 @@ Install the following before running the project locally:
 - PostgreSQL
 - Git
 
-Check your installations:
+Verify your environment:
 
 ```bash
 node --version
@@ -416,8 +473,10 @@ git --version
 ## 1️⃣ Clone the Repository
 
 ```bash
-git clone <your-repository-url>
+git clone <YOUR_GITHUB_REPOSITORY_URL>
 ```
+
+Move into the project:
 
 ```bash
 cd smart-resume-analyzer
@@ -427,7 +486,7 @@ cd smart-resume-analyzer
 
 ## 2️⃣ Frontend Setup
 
-Move into the frontend:
+Move into the frontend directory:
 
 ```bash
 cd frontend
@@ -439,13 +498,13 @@ Install dependencies:
 npm install
 ```
 
-Start the development server:
+Start the Vite development server:
 
 ```bash
 npm run dev
 ```
 
-The frontend will normally be available at:
+The frontend will normally run at:
 
 ```text
 http://localhost:5173
@@ -455,7 +514,9 @@ http://localhost:5173
 
 ## 3️⃣ Backend Setup
 
-Open another terminal:
+Open another terminal.
+
+From the project root:
 
 ```bash
 cd backend
@@ -467,9 +528,7 @@ Install dependencies:
 npm install
 ```
 
-Start the backend using the script configured in `backend/package.json`.
-
-For example:
+Start the backend using the development script configured in `package.json`:
 
 ```bash
 npm run dev
@@ -479,7 +538,9 @@ npm run dev
 
 ## 4️⃣ AI Service Setup
 
-Move into the AI service:
+Open another terminal.
+
+From the project root:
 
 ```bash
 cd ai-service
@@ -497,41 +558,47 @@ Activate it on macOS/Linux:
 source venv/bin/activate
 ```
 
-Install the dependencies defined by the AI service:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Start the service using the command configured by the project.
+Start the AI service using the command configured by the project.
 
 ---
 
 ## 5️⃣ PostgreSQL Setup
 
-Create the local database:
+If PostgreSQL is installed locally, create the application database.
+
+Using PostgreSQL:
 
 ```sql
 CREATE DATABASE resume_analyzer;
 ```
 
-Then configure the backend database connection through environment variables.
+Or from the macOS terminal, when PostgreSQL command-line utilities are installed:
 
-Example:
-
-```env
-DATABASE_URL=postgresql://USERNAME:PASSWORD@localhost:5432/resume_analyzer
+```bash
+createdb resume_analyzer
 ```
 
-Do not commit real credentials.
+If `createdb` is unavailable, connect through `psql`, pgAdmin, Postgres.app, or your configured PostgreSQL environment and execute:
+
+```sql
+CREATE DATABASE resume_analyzer;
+```
 
 ---
 
 ## 🔐 Environment Variables
 
-Environment-specific configuration should be stored outside source control.
+Secrets and environment-specific configuration should never be committed directly to Git.
 
-Example backend environment:
+### Backend
+
+Example:
 
 ```env
 PORT=5000
@@ -539,59 +606,107 @@ DATABASE_URL=postgresql://USERNAME:PASSWORD@localhost:5432/resume_analyzer
 AI_SERVICE_URL=http://localhost:8000
 ```
 
-Example frontend environment:
+### Frontend
+
+Example:
 
 ```env
 VITE_API_URL=http://localhost:5000
 ```
 
-Create local `.env` files where required.
+### AI Service
 
-Ensure `.gitignore` contains:
+Environment variables required by the AI service should be stored in its own local `.env` file when necessary.
+
+---
+
+## 📄 `.env.example`
+
+For production-quality repository documentation, commit example environment files containing variable names without real credentials.
+
+Example:
+
+```env
+PORT=
+DATABASE_URL=
+AI_SERVICE_URL=
+```
+
+Never commit:
+
+```env
+DATABASE_URL=postgresql://real-user:real-password@...
+```
+
+---
+
+## 🙈 `.gitignore`
+
+The repository should exclude local dependencies, build artifacts, operating-system files, virtual environments, and secrets.
+
+Example:
 
 ```gitignore
+# Environment
 .env
 .env.*
 !.env.example
 
+# Node
 node_modules/
 dist/
 
+# Python
 venv/
 .venv/
 __pycache__/
+*.pyc
 
+# Logs
+*.log
+logs/
+
+# macOS
 .DS_Store
-```
 
-For a production repository, provide `.env.example` files containing variable names but **never secrets**.
+# IDE
+.vscode/
+.idea/
+```
 
 ---
 
-## 🔌 API Overview
+# 🔌 API Overview
 
-The frontend communicates with the backend through REST APIs.
+The React frontend communicates with the backend through REST APIs.
 
-### Analyze Resume
+## Analyze Resume
 
 ```http
 POST /analyses
 ```
 
-Request:
+### Content Type
 
 ```text
-Content-Type: multipart/form-data
+multipart/form-data
 ```
 
-Example form fields:
+### Request Fields
+
+| Field | Type | Description |
+|---|---|---|
+| `resume` | File | Resume PDF |
+| `jobDescription` | String | Target job description |
+
+Example conceptual request:
 
 ```text
-resume=<PDF file>
-jobDescription=<job description text>
+resume = resume.pdf
+jobDescription = "We are looking for a Software Engineer..."
 ```
 
-Example response shape:
+### Example Response
 
 ```json
 {
@@ -619,12 +734,13 @@ Example response shape:
 
 ## 🗄️ Database
 
-PostgreSQL provides persistent storage for application data.
+PostgreSQL is used as the relational persistence layer.
 
-As the project evolves, persistence will support capabilities such as:
+The analysis model is designed to support information such as:
 
 ```text
 Analysis
+│
 ├── id
 ├── resume metadata
 ├── job description
@@ -635,74 +751,110 @@ Analysis
 └── created timestamp
 ```
 
-This enables future functionality including analysis history and trend insights.
+Persisting analysis data will allow ResumeAI to support features such as:
+
+- previous analysis history
+- detailed analysis views
+- user-specific analyses
+- analytics
+- comparison over time
 
 ---
 
-## ☁️ AWS Deployment Architecture
+# ☁️ AWS Cloud Architecture
 
-The project is being designed to support deployment using AWS services while keeping the architecture practical for a portfolio-scale application.
+ResumeAI is intended to become a cloud-deployed application.
 
-Planned production architecture:
+The target architecture keeps the frontend, backend, AI service, database, and monitoring responsibilities separated.
 
 ```mermaid
 flowchart TD
     USER[User Browser]
 
-    USER --> CF[CloudFront]
-    CF --> S3[S3 Frontend]
+    USER --> CF[Amazon CloudFront]
+
+    CF --> S3[Amazon S3<br/>React Production Build]
 
     USER --> API[Backend API]
 
-    API --> AI[AI Service]
-    API --> RDS[(Amazon RDS PostgreSQL)]
+    API --> AI[AI / NLP Service]
+
+    API --> RDS[(Amazon RDS<br/>PostgreSQL)]
 
     AI --> MODEL[Sentence Transformer Model]
 
-    API --> LOGS[CloudWatch]
+    API --> CW[Amazon CloudWatch]
 
-    S3 --> CF
+    AI --> CW
 ```
 
-Potential AWS services:
+### Planned AWS Services
 
-| AWS Service | Purpose |
+| AWS Service | Responsibility |
 |---|---|
-| Amazon S3 | Static frontend hosting |
-| CloudFront | CDN and HTTPS delivery |
-| Compute service | Backend/API hosting |
-| Amazon RDS | PostgreSQL database |
-| CloudWatch | Logs and monitoring |
-| IAM | Access control |
+| Amazon S3 | Host production frontend assets |
+| Amazon CloudFront | CDN and frontend delivery |
+| AWS Compute | Run backend and AI services |
+| Amazon RDS | Managed PostgreSQL |
+| Amazon CloudWatch | Application logs and monitoring |
+| AWS IAM | Cloud permissions and access control |
 
-> AWS deployment is part of the project roadmap and should not be interpreted as currently deployed infrastructure until the production environment is completed.
-
----
-
-## 🔒 Security Considerations
-
-The production architecture is being designed around standard security practices:
-
-- environment-based secrets
-- no credentials committed to Git
-- server-side file validation
-- PDF-only upload restrictions
-- file size limits
-- database credentials stored outside source code
-- CORS configuration
-- request validation
-- secure cloud IAM permissions
-- HTTPS for production traffic
-
-Additional controls will be added as authentication and cloud deployment are implemented.
+> AWS deployment is currently part of the development roadmap. The README will be updated with the final infrastructure once deployment is completed.
 
 ---
 
-## 📱 Responsive Design
+## 💰 Cloud Cost Strategy
 
-ResumeAI is designed around multiple viewport sizes.
+The cloud architecture is intended to remain appropriate for a portfolio-scale project.
 
-| Device | Target |
+Development decisions will prioritize:
+
+- AWS Free Tier eligible resources where practical
+- low-cost compute
+- controlled database usage
+- minimal idle resources
+- resource cleanup when infrastructure is not required
+- monitoring usage to avoid unexpected cloud costs
+
+> AWS Free Tier eligibility, limits, and pricing can change, so current AWS pricing should always be checked before provisioning resources.
+
+---
+
+# 🔒 Security
+
+The application is being developed with production-oriented security practices in mind.
+
+### Current / Architectural Practices
+
+- environment-based configuration
+- credentials excluded from Git
+- server-side request validation
+- PDF file-type validation
+- file-size restrictions
+- database configuration outside source code
+- controlled frontend/backend communication
+
+### Planned Production Controls
+
+- authentication
+- authorization
+- HTTPS
+- production CORS policy
+- API rate limiting
+- secure HTTP headers
+- AWS IAM least-privilege permissions
+- centralized logging
+- request monitoring
+- production error handling
+- upload security improvements
+
+---
+
+# 📱 Responsive Design
+
+ResumeAI is designed around several target viewport sizes.
+
+| Device | Target Width |
 |---|---:|
 | Mobile | 390px+ |
 | Large Mobile | 430px+ |
@@ -710,37 +862,57 @@ ResumeAI is designed around multiple viewport sizes.
 | Laptop | 1024px+ |
 | Desktop | 1440px+ |
 
-Desktop users receive a persistent sidebar, while smaller devices use compact section navigation.
+### Desktop
+
+Desktop users receive:
+
+- persistent sidebar
+- sticky top navigation
+- full-width analysis workspace
+- multi-column results dashboard
+
+### Mobile
+
+Mobile users receive:
+
+- compact application header
+- section navigation
+- stacked upload workspace
+- stacked result cards
+- touch-friendly controls
 
 ---
 
-## 🎨 Design System
+# 🎨 Design System
 
-The interface uses a custom four-color palette:
+ResumeAI uses the following core palette:
 
 | Color | Hex | Usage |
 |---|---|---|
-| Deep Plum | `#450C3F` | Navigation, headings, primary actions |
-| Green | `#B9D175` | Success states and accents |
-| Light Green | `#D9EFBD` | Tags, badges and highlights |
-| Cream | `#F5FBDA` | Subtle accent surfaces |
-| Off White | `#FCFCF8` | Main application background |
+| 🟣 Deep Plum | `#450C3F` | Sidebar, headings, primary actions |
+| 🟢 Green | `#B9D175` | Success states and accents |
+| 🌿 Light Green | `#D9EFBD` | Tags, highlights, secondary surfaces |
+| 🟡 Cream | `#F5FBDA` | Light accents |
+| ⚪ Off White | `#FCFCF8` | Main application background |
 
-The UI also uses:
+The interface also uses:
 
 - subtle gradients
-- responsive typography
 - dark borders
 - layered shadows
+- responsive typography
+- rounded application cards
+- hover interactions
 - sticky navigation
-- reusable cards
-- interactive hover states
+- reusable component styling
+
+The design intentionally limits the amount of yellow/cream used across large surfaces to maintain a clean professional appearance.
 
 ---
 
-## 🧪 Testing
+# 🧪 Testing
 
-Before committing frontend changes, test the application at several viewport sizes:
+Before committing frontend changes, test the application at multiple viewport sizes:
 
 ```text
 390px
@@ -749,52 +921,101 @@ Before committing frontend changes, test the application at several viewport siz
 1440px
 ```
 
-Core workflow to verify:
+### Core User Flow
 
 ```text
+Open Dashboard
+      │
+      ▼
+Navigate to Analyzer
+      │
+      ▼
 Upload Resume
-      ↓
-Enter Job Description
-      ↓
-Run Analysis
-      ↓
-Receive Match Score
-      ↓
-Review Matching Skills
-      ↓
-Review Missing Skills
-      ↓
-Review Recommendations
+      │
+      ▼
+Paste Job Description
+      │
+      ▼
+Analyze Resume Match
+      │
+      ▼
+AI Processing
+      │
+      ▼
+Results Dashboard
+      │
+      ├── Match Score
+      ├── Matching Skills
+      ├── Skill Gaps
+      └── Recommendations
 ```
 
-Additional automated testing will be added as the project matures.
+### Manual Checks
+
+Verify:
+
+- valid PDF upload
+- invalid file rejection
+- maximum file-size validation
+- empty job-description validation
+- backend request
+- loading state
+- backend error state
+- successful analysis
+- automatic results navigation
+- mobile layout
+- tablet layout
+- desktop layout
+
+Automated testing will be expanded as the application matures.
 
 ---
 
-## 🛣️ Roadmap
+# 🛣️ Roadmap
 
-### Phase 1 — Core Platform
+## Phase 1 — Core Application
 
-- [x] React application
+- [x] React + Vite frontend
+- [x] Tailwind CSS interface
 - [x] Responsive dashboard
-- [x] Resume PDF upload UI
-- [x] Job description input
+- [x] Desktop sidebar
+- [x] Mobile navigation
+- [x] Resume PDF upload interface
+- [x] Job description workspace
+- [x] Resume analysis request flow
 - [x] Match score interface
-- [x] Matching skills interface
-- [x] Skill-gap interface
+- [x] Matched skills interface
+- [x] Missing skills interface
 - [x] Recommendation interface
-- [x] Responsive sidebar navigation
+- [x] Responsive results dashboard
 
-### Phase 2 — Application Features
+---
 
-- [ ] Analysis history
+## Phase 2 — Persistence & History
+
+- [ ] Store completed analyses
+- [ ] Analysis history page
 - [ ] Individual analysis details
 - [ ] Delete previous analyses
-- [ ] Search/filter analysis history
-- [ ] User authentication
-- [ ] User-specific analysis storage
+- [ ] Search analysis history
+- [ ] Filter previous analyses
+- [ ] Analysis timestamps
 
-### Phase 3 — AI Improvements
+---
+
+## Phase 3 — Authentication
+
+- [ ] User registration
+- [ ] User login
+- [ ] Password hashing
+- [ ] JWT authentication
+- [ ] Protected routes
+- [ ] User-specific analysis history
+- [ ] Logout functionality
+
+---
+
+## Phase 4 — AI Improvements
 
 - [ ] Improved skill extraction
 - [ ] Weighted skill matching
@@ -802,75 +1023,93 @@ Additional automated testing will be added as the project matures.
 - [ ] Experience relevance scoring
 - [ ] Education matching
 - [ ] Explainable scoring
-- [ ] Recommendation improvements
-
-### Phase 4 — Production Engineering
-
-- [ ] Automated backend tests
-- [ ] Frontend tests
-- [ ] API integration tests
-- [ ] Docker containers
-- [ ] CI/CD pipeline
-- [ ] Production logging
-- [ ] Error monitoring
-- [ ] Rate limiting
-
-### Phase 5 — AWS
-
-- [ ] Deploy frontend
-- [ ] Deploy backend
-- [ ] Deploy AI service
-- [ ] Provision PostgreSQL
-- [ ] Configure production networking
-- [ ] Configure HTTPS
-- [ ] Configure monitoring
-- [ ] Production smoke testing
+- [ ] Improved recommendation generation
+- [ ] Model performance evaluation
 
 ---
 
-## 📈 Future Improvements
+## Phase 5 — Production Engineering
 
-Several extensions can make ResumeAI more useful while demonstrating deeper system-design concepts:
+- [ ] Backend unit tests
+- [ ] Frontend component tests
+- [ ] API integration tests
+- [ ] AI pipeline tests
+- [ ] Dockerize backend
+- [ ] Dockerize AI service
+- [ ] CI/CD pipeline
+- [ ] API rate limiting
+- [ ] Structured application logging
+- [ ] Production error handling
+- [ ] Health-check endpoints
 
-**Resume intelligence**
+---
+
+## Phase 6 — AWS Deployment
+
+- [ ] Create AWS infrastructure
+- [ ] Deploy frontend
+- [ ] Deploy Node.js API
+- [ ] Deploy AI service
+- [ ] Provision PostgreSQL
+- [ ] Configure environment secrets
+- [ ] Configure HTTPS
+- [ ] Configure CloudFront
+- [ ] Configure CloudWatch
+- [ ] Production smoke testing
+- [ ] Configure cost monitoring
+
+---
+
+# 🔭 Future Improvements
+
+### Resume Intelligence
 
 - resume section parsing
+- role-specific resume analysis
 - experience-level matching
 - skill importance weighting
-- role-specific scoring
+- education relevance analysis
+- project relevance scoring
 
-**Job intelligence**
+### Job Intelligence
 
-- multiple job comparison
-- saved job descriptions
-- company/role organization
-- job requirement categorization
+- compare one resume against multiple jobs
+- save target jobs
+- categorize job requirements
+- distinguish required and preferred qualifications
 
-**Analytics**
+### Analytics
 
 - score history
-- commonly missing skills
 - improvement trends
-- dashboard insights
+- commonly missing skills
+- skill-gap analytics
+- analysis statistics
 
-**Platform**
+### Platform
 
 - authentication
+- personal dashboard
 - saved analyses
 - user profiles
 - cloud deployment
-- monitoring and observability
+- monitoring
+- observability
 
 ---
 
-## 🧩 Engineering Goals
+# ⚙️ Engineering Goals
 
-ResumeAI is built to demonstrate practical experience across multiple layers of software engineering:
+ResumeAI is designed as more than a model demonstration.
+
+The project combines:
 
 ```text
 Frontend Engineering
         +
-REST API Development
+Backend Engineering
+        +
+REST API Design
         +
 Database Design
         +
@@ -882,58 +1121,142 @@ Responsive Product Design
         +
 Cloud Architecture
         =
-End-to-End AI System
+End-to-End AI Application
 ```
 
-The goal is not only to call an AI model, but to build the surrounding software system required to turn that model into a usable application.
+The engineering goal is to demonstrate how an AI model can be integrated into a complete software system with a usable interface, API layer, persistent data, and production deployment strategy.
 
 ---
 
-## 🤝 Contributing
+# 🌿 Git Workflow
 
-This project is currently under active development.
+Development is intentionally split into focused commits so that the repository history reflects the evolution of the application.
 
-For development work:
+### Feature Branch
 
 ```bash
 git checkout -b feature/feature-name
 ```
 
-After making changes:
+### Stage Changes
 
 ```bash
 git add .
+```
+
+### Commit
+
+```bash
 git commit -m "feat: describe the feature"
 ```
 
-Commit messages follow a simple conventional style:
+### Push
+
+```bash
+git push origin feature/feature-name
+```
+
+### Commit Convention
+
+| Prefix | Purpose |
+|---|---|
+| `feat:` | New functionality |
+| `fix:` | Bug fix |
+| `refactor:` | Code restructuring |
+| `style:` | UI/styling changes |
+| `docs:` | Documentation |
+| `test:` | Tests |
+| `chore:` | Maintenance/tooling |
+
+Examples:
 
 ```text
-feat:     new functionality
-fix:      bug fix
-refactor: structural code improvement
-style:    UI or styling improvement
-docs:     documentation
-test:     testing changes
-chore:    tooling or maintenance
+feat: add resume upload workflow
+feat: add semantic job matching
+feat: add dashboard sidebar navigation
+refactor: redesign resume analysis workspace
+feat: redesign AI analysis results dashboard
+docs: add production project documentation
 ```
 
 ---
 
-## 📄 License
+# 📸 Screenshot Structure
 
-This project is intended for educational, portfolio, and software engineering demonstration purposes.
+README images are stored directly inside the repository:
 
-A formal open-source license can be added before accepting external contributions or redistribution.
+```text
+docs/
+└── images/
+    ├── dashboard.png
+    ├── analyzer.png
+    ├── analysis-results.png
+    └── mobile-dashboard.png
+```
+
+The README references them using relative paths:
+
+```markdown
+![ResumeAI Dashboard](docs/images/dashboard.png)
+```
+
+Because the images are stored in the repository, GitHub renders them automatically without requiring external image hosting.
+
+---
+
+# 🤝 Contributing
+
+ResumeAI is currently under active development.
+
+If contributing:
+
+1. Create a feature branch.
+2. Make focused changes.
+3. Test the affected workflow.
+4. Use a descriptive commit message.
+5. Open a pull request describing the change.
+
+Example:
+
+```bash
+git checkout -b feature/analysis-history
+```
+
+```bash
+git add .
+git commit -m "feat: add analysis history"
+```
+
+---
+
+# 📄 License
+
+This project is currently intended for educational, portfolio, and software engineering demonstration purposes.
+
+A formal open-source license can be added before external redistribution or community contributions are accepted.
+
+---
+
+# 👩‍💻 Author
+
+**Rachana Sudhakar**
+
+Software Engineer focused on full-stack development, AI-powered applications, backend systems, and cloud technologies.
 
 ---
 
 <div align="center">
 
-### 🧠 ResumeAI
+<br />
 
-**AI-powered resume intelligence for smarter job matching.**
+## 🧠 ResumeAI
 
-Built with React • Node.js • PostgreSQL • Sentence Transformers • AWS
+### From resume to role — understand the match.
+
+**React • Node.js • PostgreSQL • Sentence Transformers • AWS**
+
+<br />
+
+⭐ If you find this project useful, consider starring the repository.
 
 </div>
