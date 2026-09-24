@@ -206,9 +206,10 @@ The results dashboard displays:
 
 ### 📱 Responsive Experience
 
-![ResumeAI Mobile Dashboard](docs/images/mobile-dashboard.png)
-
 The dashboard automatically adapts to smaller screens with mobile-friendly navigation and stacked content.
+<p align="center">
+  <img src="docs/images/mobile-dashboard.png" alt="ResumeAI Mobile Dashboard" width="220">
+</p>
 
 ---
 
